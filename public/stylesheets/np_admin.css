@@ -1,0 +1,536 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+  box-sizing: border-box; /* the boxes resize */
+  background-color: beige;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+/*--------------HEADER & FOOTER........................*/
+
+header {
+  width: 65%; /*85?*/
+  height: 10%;
+  margin: -18px -15% 0 15%;
+  /* margin: -18px auto; */
+  padding: none;
+  background:#3CAAE6;
+  color: white;
+  font-style: italic;
+  font-size: x-large;
+  text-align: center;
+  position: relative;
+  /* top: 10px;
+  left: 10px; */
+}
+
+header h1 {
+  width: 40%;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  position: 25% 50% 25%;
+  /* text-shadow: -4px 0 black 0 4px black 4px 0 black 0 -4px black; */
+  text-shadow: 2px 2px 4px black;
+}
+
+footer {
+  width: 65%;
+  height: 10%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  background: white;
+  /* border-style: solid; */
+  color: grey;
+  margin-top: 0;
+  text-align: center;
+  /*position: relative; /* Relative to main content, since this
+  is the closest ABSOLUTE positioned element.*/
+  position: absolute;
+  z-index: 100;
+  /* top: 10px;  */
+  left: 15%;
+  bottom: -110%;
+}
+
+/*-------------------SECTIONS: sidebar & contents-------------*/
+
+section {
+  display: inline-block;
+  background:none;
+  /* border-style: solid; */
+  border-width: thin;
+  border-style: ridge;
+  font-family: sans-serif;
+  font-style: inherit;
+  background-color: white;
+}
+
+.login {
+  width: 20%;
+  height: 10%;
+  margin: 0px 0 0 0;
+  padding: none;
+  border: none;
+  align-content: center;
+  place-content: center;
+  /* background:#3CAAE6; */
+  background:#3CAAE6;
+  font-size: 12;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login a {
+  place-content: center;
+  align-content: center;
+  float: right;
+}
+
+.sidebar {
+  /* padding-top: -10px; */
+  /* width: 100px */
+  background-color:white;
+  margin: 0 0 0 0;
+  height: 200%; /* total - (header+footer)?*/
+  width: 20%;
+  position: absolute;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  text-align: left;
+  /* align-content: left; */
+  line-break: auto;
+  box-shadow: -2px 0 lightblue;
+  /* font-size: 30; */
+}
+
+.sidebar ul {
+  margin: 10% -10%;
+  text-align: none;
+  flex: 0 1 300px;
+}
+
+.sidebar li {
+  /* padding: 0 0 0 0; */
+  margin: 0 0 10% 0;
+  /* position: fixed; */
+}
+
+.sidebar a {
+  color: black;
+  font-size: 20;
+  margin: 10px 0;
+}
+
+.section {
+  border-style: dashed;
+}
+
+.advice {
+  font-style: italic;
+}
+
+.subpages li a {
+  font-size: 15;
+  margin: 0 0;
+}
+
+.selected_advice a {
+  font-size: 10;
+  color: black;
+  padding-left: 6px;
+  margin: 2% 2%;
+}
+
+.selected_section a {
+  font-size: 14;
+  color: black;
+  padding-left: 6px;
+  margin: 2% 2%;
+}
+
+.selected_timeline a {
+  font-size: 16;
+  color: black;
+  padding-left: 6px;
+  /* border-style: solid;
+  border-radius: 5px;
+  border-width: 1px; */
+  /* text-decoration-line: underline;
+  text-decoration-color: black; */
+}
+
+.passive_product a {
+  font-size: 8;
+  font-style: italic;
+  color:#3CAAE6;
+  padding-left: 6px;
+  margin: 2% 2%;
+}
+
+.passive_advice a {
+  font-size: 10;
+  color:#3CAAE6;
+  padding-left: 6px;
+  margin: 2% 2%;
+}
+
+.passive_section a {
+  font-size: 14;
+  color:#3CAAE6;
+  padding-left: 6px;
+  margin: 2% 2%;
+}
+
+.passive_timeline a {
+  font-size: 16;
+  color:#3CAAE6;
+  padding-left: 6px;
+  /* border-style: solid;
+  border-radius: 5px;
+  border-width: 1px; */
+  /* text-decoration-line: underline;
+  text-decoration-color: #3CAAE6; */
+}
+
+.passive a {
+  color: #3CAAE6;
+}
+
+.leftside {
+  background-color: #3CAAE6;
+  width: 15%;
+  height: 200%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+
+/* --------------------- MAIN CONTENTS PANEL (SECTION)-------------------- */
+
+.contents { /* # are used for ids - only once per page! */
+  min-height: 30%; /*downsizes*/
+  /*height: 80%; /* So that the slogans fit into the bottom area... :) */
+  /* max-width: 700px; */
+  max-width: 55%;
+  width: 55%;
+  margin: 10px 10px 10% 10px; /*first: top&down, 2nd: left&right*/
+  padding: 5px 5px;
+  position: relative;
+  top: 10%;
+  left: 20%;
+  /* overflow: scroll; */
+  /* overflow: auto; */
+  display: inline-block;
+  flex-wrap: wrap; /*so that there is no overflow on 
+  the width of the contents section.*/
+  flex-direction: column; /*default is row!*/
+  text-indent: none;
+  box-shadow: 0 2px 4px 0;
+}
+
+.contents h2 {
+  text-align: center;
+  border-style: solid;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 3%;
+  border-color: #3CAAE6;
+}
+
+.contents a {
+  display: inline-block; /* Because of the display change in .contents,
+  the inline-block must be restated to make the list appear correctly.*/
+  color: white;
+  background-color: #3CAAE6;
+  font-size: normal;
+  margin: 10px 0;
+  padding: 5px 5px;
+  border-color: #3CAAE6;
+  border-radius: 10px;
+}
+
+.contents a.link {
+  max-width: 10%;
+  border: 2px dashed;
+  border-color: #3CAAE6;
+  background-color: white;
+  color: black;
+  font-size: medium;
+  display: inline-block;
+  margin: 0 0;
+}
+
+.slogans { /*inheriting the inline-block property */
+  max-height: 20%;
+  max-width: 700px;
+  width: 50%;
+  margin: 0 10px;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  flex-wrap: wrap;
+  padding: 0 0 0 0;
+}
+
+/*---------------DIVS In Content-------------*/
+
+div {
+  /* margin: 10% 0 -30% 0; */
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  /* border-style: dashed;
+  border-width: 2px;
+  border-color: grey;
+  border-radius: 5px; */
+}
+
+li { list-style-type: none; }
+
+.desc {}
+
+.content {
+  /* min-height: 30%;
+  max-height: 80%; */
+  /* width: 70%; */
+  /* margin: 10px -10% 0 0; */
+  /* padding: 10px 10px; */
+  text-align: center;
+  /* flex-flow: column; */
+}
+
+.active {
+  text-align: left;
+  color: white;
+  background-color: black;
+  margin: 10px 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.active ul li {
+  margin: 10px 0;
+  /*border-width: 5px;
+  border-style: solid;
+  border-color: white;*/
+}
+
+/* .active h2 {
+  width: 50px;
+} */
+
+.inactive {
+  text-align: left;
+  color: white;
+  background-color: grey; 
+  /* margin: 0 0 10px 0;  */
+  padding: none;
+}
+
+#operations {
+  color: blue;
+  padding:none;
+}
+
+/**-----Actions------*/
+
+.actions {
+  width: 65%;
+  margin: 0 auto; /* auto makes the margin equal on the r/l hand sides. */
+  text-align: center;
+}
+
+a.action {
+  /* margin-bottom: 5px; */
+  background-color: green;
+}
+
+
+/* Lists */
+
+table {
+  border-collapse: collapse;
+  vertical-align: top;
+  padding-bottom: 0;
+  background-color: none;
+}
+
+table.list {
+  /* margin-top: 0; */
+  /* margin-bottom: 0; */
+  width: 100%;
+}
+
+table.list tr td {
+  border: 1px solid grey;
+  border-style: thin;
+  text-align: center;
+}
+
+table.list tr th {
+  border: 1px dotted grey;
+  background:whitesmoke;
+  color: black;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Forms */
+
+dl {
+  clear: both;
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+dt {
+  float: left;
+  font-weight: bold;
+  width: 125px;
+}
+
+dd {
+  float: left;
+  margin-left: 1em;
+}
+
+.content input[type=text] {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input[type=submit] {  /*Div sub-element used in forms. */
+  clear: both;
+  /* margin: 1em 0 1em 75px; */
+  color: white;
+  background-color: #3CAAE6;
+  font-size: x-small;
+  margin: 2px 0;
+  padding: 5px 5px;
+  border-color: #3CAAE6;
+  border-radius: 5px;
+}
+
+/* Errors */
+
+.errors {
+  display: inline-block;
+  border: 2px solid red;
+  color: red;
+  padding: 0px;
+  margin-bottom: 0;
+}
+
+.errors ul {
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+#slogan_1 {
+  background: red;
+  font-style: italic;
+  font-family: 'Arial, sans-serif';
+  font-size: small;
+  color: aliceblue;
+  /* width: 100px; */
+  /* margin: 10px 10px; */
+  /* flex: 1 1 50px; */
+  /* order: 5 */
+}
+
+#slogan_2 {
+  background:green;
+  font-style: italic;
+  font-size: large;
+  font-family: 'Arial, sans-serif';
+  color: lightgray;
+  /* width: 100px; */
+  /* flex: 0 1 100px; */
+  /* margin: 0 0px 0 0px; */
+  /* order: 4; */
+}
+
+#slogan_3 {
+  background:purple;
+  font-style: italic;
+  font-family: 'Arial, sans-serif';
+  font-size: 10;
+  color: yellow;
+  width: 150px;
+  /* margin: 20px 0 0 5px;
+  padding: 20px;
+  border-width: 10px; */
+  border-color: black;
+  /* order: 3; */
+}
+
+#slogan_4 {
+  background:green;
+  font-style: italic;
+  font-size: large;
+  font-family: 'Trebuchet, sans-serif';
+  color: lightgray;
+  width: 100px;
+  margin: 0 0px 0 10px;
+  /* flex: 1 1 100px; */
+  /* order: 2; */
+}
+
+#slogan_5 {
+  background: black;
+  font-style: italic;
+  font-size: large;
+  font-family: 'Arial, sans-serif';
+  color: lightgray;
+  width: 100px;
+  margin: 0 0px 0 10px;
+  /* flex: 2 1 100px; */
+  /* order: 1; */
+}
+
+@media (min-width: 850px) {
+  /*when screen width exceeeds the min, slogan1 floats, applying
+  a new defined width.*/
+  #slogan_1 {
+    width: 20;
+    float: left;
+  }
+  /* .content {
+    width: 40%;
+    float: left;
+  }
+  .desc {
+    width: 40%;
+    float: left;
+  } */
+}
+
+/*---------IMAGES--------------------*/
+
+img {
+  margin: 0 0 0 0;
+  width: 15%;
+  height: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
